@@ -12,7 +12,7 @@ const PdfViewer = () => {
   header.append('Access-Control-Allow-Origin', '*');
   const width = window.innerWidth - 600
   const navigate = useNavigate();
-let abc
+  let abc
   const handleLogOut = async () => {
     await localStorage.clear();
     navigate("/");
@@ -26,7 +26,7 @@ let abc
   const handleChange = (event) => {
     event.preventDefault();
     const name = event.target.value;
-    abc=name
+    abc = name
   };
   return (
     <div>
@@ -54,14 +54,13 @@ let abc
           <Document
             file={{ url: 'https://researchtorevenue.files.wordpress.com/2015/04/1r41ai10801601_fong.pdf', header }}
             className='pdf_doc'
-            onSourceError={(e)=>console.log('onSourceError',e)}
+            onSourceError={(e) => console.log('onSourceError', e)}
             onSourceSuccess={(e) => console.log("-onSourceSuccess--", e)}
             onEr
           >
             <Page pageNumber={page} />
           </Document>
         </div>
-
         <div style={{ marginTop: "20%", width: 100 }}>
           <Button onClick={() => setPage(page + 1)}>next</Button>
         </div>
