@@ -17,13 +17,11 @@ function Login() {
     }
   }, [])
 
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setLoginData(values => ({ ...values, [name]: value }))
   };
-
   const handleSubmit = async () => {
     if (loginData?.email && loginData?.password) {
       const data = encryptData(loginData)
@@ -38,7 +36,6 @@ function Login() {
       alert("all Field Requerd")
     }
   }
-
   if (token==null) {
     return (
       <div className="background">
